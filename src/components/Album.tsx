@@ -4,14 +4,17 @@ import { Photos } from "../interfaces/Photos";
 
 const Album = () => {
   const [photos, setPhotos] = useState<Photos[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
       try {
+        setLoading(true);
         await fetch(`https://picsum.photos/v2/list?page=1&limit=20`)
           .then((response) => response.json())
           .then((data) => {
             setPhotos(data);
+            setLoading(false);
           });
       } catch (e) {
         console.error("Error fetching api data", e);
@@ -29,6 +32,8 @@ const Album = () => {
 
   return (
     <div>
+      <h1>Photo Album</h1>
+      {loading && <h2>Loading...</h2>}
       <Masonry
         breakpointCols={breakpoints}
         className="my-masonry-grid"
