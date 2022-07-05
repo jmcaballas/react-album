@@ -6,6 +6,10 @@ body {
   overflow-x: hidden;
 }
 
+.App {
+  margin-top: 100px;
+}
+
 .my-masonry-grid {
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
