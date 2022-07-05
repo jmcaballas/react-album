@@ -5,7 +5,7 @@ import Album from "./components/Album";
 function App() {
   return (
     <div className="App">
-      <h1>Hello, World!</h1>
+      <h1>Photo Album</h1>
       <Album />
     </div>
   );

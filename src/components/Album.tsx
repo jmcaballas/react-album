@@ -21,7 +21,13 @@ const Album = () => {
 
   return (
     <div>
-      <h1>Album Component</h1>
+      {photos.map((photo) => {
+        return (
+          <div key={photo.id} className="photo-container">
+            <img src={photo.download_url} width="200" alt={photo.author} />
+          </div>
+        );
+      })}
     </div>
   );
 };
