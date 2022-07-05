@@ -30,6 +30,12 @@ h2,
   text-align: center;
 }
 
+h1 {
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
 button {
   width: 100px;
   padding: 10px;

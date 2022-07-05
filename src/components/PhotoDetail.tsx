@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./PhotoDetail.css";
 
@@ -26,8 +26,11 @@ const PhotoDetail = () => {
 
   return (
     <div className="PhotoDetail">
-      <h1 className="author">Author: {photo.author}</h1>
+      <Link to="/">
+        <h1>Photo Album</h1>
+      </Link>
       <img src={photo.download_url} alt={photo.author} className="photo" />
+      <h2 className="author">Author: {photo.author}</h2>
     </div>
   );
 };

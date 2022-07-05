@@ -37,7 +37,9 @@ const Album = () => {
 
   return (
     <div className="Album">
-      <h1>Photo Album</h1>
+      <Link to="/">
+        <h1>Photo Album</h1>
+      </Link>
       <Masonry
         breakpointCols={breakpoints}
         className="my-masonry-grid"
