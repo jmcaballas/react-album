@@ -5,12 +5,13 @@ import { Photos } from "../interfaces/Photos";
 const Album = () => {
   const [photos, setPhotos] = useState<Photos[]>([]);
   const [loading, setLoading] = useState(false);
+  const [pageNumber, setPageNumber] = useState<number>(1);
 
   useEffect(() => {
     async function fetchData() {
       try {
         setLoading(true);
-        await fetch(`https://picsum.photos/v2/list?page=1&limit=20`)
+        await fetch(`https://picsum.photos/v2/list?page=${pageNumber}&limit=20`)
           .then((response) => response.json())
           .then((data) => {
             setPhotos(data);
@@ -21,7 +22,7 @@ const Album = () => {
       }
     }
     fetchData();
-  }, []);
+  }, [pageNumber]);
 
   const breakpoints = {
     default: 4,
@@ -48,7 +49,16 @@ const Album = () => {
         })}
       </Masonry>
       <div className="btn-container">
-        <button>Load More</button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setPageNumber((prevState) => {
+              return prevState + 1;
+            });
+          }}
+        >
+          Load More
+        </button>
       </div>
     </div>
   );
