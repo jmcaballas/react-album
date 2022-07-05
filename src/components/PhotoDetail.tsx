@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
+import "./PhotoDetail.css";
 
 const PhotoDetail = () => {
   const [photo, setPhoto] = useState<{ author: string; download_url: string }>({
@@ -25,8 +26,8 @@ const PhotoDetail = () => {
 
   return (
     <div className="PhotoDetail">
-      <div>Author: {photo.author}</div>
-      <img src={photo.download_url} alt={photo.author} />
+      <h1 className="author">Author: {photo.author}</h1>
+      <img src={photo.download_url} alt={photo.author} className="photo" />
     </div>
   );
 };
