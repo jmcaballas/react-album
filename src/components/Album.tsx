@@ -18,6 +18,12 @@ const Album = () => {
     }
     fetchData();
   }, []);
+
+  return (
+    <div>
+      <h1>Album Component</h1>
+    </div>
+  );
 };
 
 export default Album;
