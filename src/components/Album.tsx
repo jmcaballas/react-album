@@ -1,3 +1,4 @@
+import Masonry from "react-masonry-css";
 import { useEffect, useState } from "react";
 import { Photos } from "../interfaces/Photos";
 
@@ -19,15 +20,28 @@ const Album = () => {
     fetchData();
   }, []);
 
+  const breakpoints = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1,
+  };
+
   return (
     <div>
-      {photos.map((photo) => {
-        return (
-          <div key={photo.id} className="photo-container">
-            <img src={photo.download_url} width="200" alt={photo.author} />
-          </div>
-        );
-      })}
+      <Masonry
+        breakpointCols={breakpoints}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {photos.map((photo) => {
+          return (
+            <div key={photo.id} className="photo-container">
+              <img src={photo.download_url} width="200" alt={photo.author} />
+            </div>
+          );
+        })}
+      </Masonry>
     </div>
   );
 };
