@@ -14,7 +14,9 @@ const Album = () => {
         await fetch(`https://picsum.photos/v2/list?page=${pageNumber}&limit=20`)
           .then((response) => response.json())
           .then((data) => {
-            setPhotos(data);
+            setPhotos((prevState) => {
+              return [...prevState, ...data];
+            });
             setLoading(false);
           });
       } catch (e) {
