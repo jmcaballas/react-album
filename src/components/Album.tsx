@@ -42,6 +42,9 @@ const Album = () => {
           );
         })}
       </Masonry>
+      <div className="btn-container">
+        <button>Load More</button>
+      </div>
     </div>
   );
 };

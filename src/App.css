@@ -35,3 +35,15 @@ body {
 .photo-container:hover {
   transform: scale(1.5);
 }
+
+h1,
+.btn-container {
+  text-align: center;
+}
+
+button {
+  width: 100px;
+  padding: 10px;
+  background-color: white;
+  cursor: pointer;
+}
