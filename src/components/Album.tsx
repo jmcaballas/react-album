@@ -34,7 +34,7 @@ const Album = () => {
   };
 
   return (
-    <div>
+    <div className="Album">
       <h1>Photo Album</h1>
       <Masonry
         breakpointCols={breakpoints}
