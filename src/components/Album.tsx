@@ -1,4 +1,5 @@
 import Masonry from "react-masonry-css";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Photos } from "../interfaces/Photos";
 import "./Album.css";
@@ -45,7 +46,9 @@ const Album = () => {
         {photos.map((photo) => {
           return (
             <div key={photo.id} className="photo-container">
-              <img src={photo.download_url} width="200" alt={photo.author} />
+              <Link to={`/${photo.id}`}>
+                <img src={photo.download_url} width="200" alt={photo.author} />
+              </Link>
             </div>
           );
         })}
