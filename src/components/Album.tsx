@@ -34,7 +34,6 @@ const Album = () => {
   return (
     <div>
       <h1>Photo Album</h1>
-      {loading && <h2>Loading...</h2>}
       <Masonry
         breakpointCols={breakpoints}
         className="my-masonry-grid"
@@ -48,6 +47,7 @@ const Album = () => {
           );
         })}
       </Masonry>
+      {loading && <h2>Loading...</h2>}
       <div className="btn-container">
         <button
           onClick={(e) => {
