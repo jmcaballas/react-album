@@ -1,6 +1,7 @@
 import Masonry from "react-masonry-css";
 import { useEffect, useState } from "react";
 import { Photos } from "../interfaces/Photos";
+import "./Album.css";
 
 const Album = () => {
   const [photos, setPhotos] = useState<Photos[]>([]);
