@@ -23,3 +23,11 @@ body {
   /* change div to reference your elements you put in <Masonry> */
   margin-bottom: 10px;
 }
+
+.photo-container {
+  transition: all 0.2s ease-in-out;
+}
+
+.photo-container:hover {
+  transform: scale(1.5);
+}
