@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Photos } from "../interfaces/Photos";
 
 const Album = () => {
-  const [photos, setPhotos] = useEffect([]);
+  const [photos, setPhotos] = useState<Photos[]>([]);
 
   useEffect(() => {
     async function fetchData() {
